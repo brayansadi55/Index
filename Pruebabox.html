@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Muñeco de Nieve y Copos de Nieve</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #89cff0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Estilos de los copos de nieve */
+    .snowflake {
+      position: absolute;
+      top: -20px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #fff;
+      animation: snowflakeFall linear infinite;
+    }
+
+    /* Animación de caída de los copos de nieve */
+    @keyframes snowflakeFall {
+      0% {
+        transform: translateY(-10vh) rotate(0deg);
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+      }
+    }
+
+    /* Estilos del muñeco de nieve */
+    .snowman {
+      position: absolute;
+      top: 50%; /* Centrar verticalmente */
+      left: 50%; /* Centrar horizontalmente */
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+
+    .snowball {
+      border-radius: 50%;
+      background-color: #fff;
+      position: absolute;
+      z-index: 1;
+      transform: rotate(90deg); /* Rotación de 90 grados */
+    }
+
+    .bottom {
+      width: 100px;
+      height: 100px;
+      top: 100px;
+      z-index: 0;
+    }
+
+    .middle {
+      width: 80px;
+      height: 80px;
+      top: 60px;
+      z-index: 0;
+    }
+
+    .top {
+      width: 60px;
+      height: 60px;
+      top: 30px;
+      z-index: 0;
+    }
+
+    .scarf {
+      width: 70px;
+      height: 10px;
+      background-color: #FF4500;
+      position: absolute;
+      top: 65px;
+      left: 2px;
+      transform-origin: bottom;
+      transform: rotate(171deg);
+      z-index: 2;
+      border-radius: 5px;
+    }
+
+    .hat {
+      width: 40px;
+      height: 30px;
+      background-color: #000;
+      border-radius: 10px 10px 0 0;
+      position: absolute;
+      top: 10px;
+      left: 8px;
+      z-index: 3;
+    }
+
+    .eyes {
+      width: 8px;
+      height: 8px;
+      background-color: #000;
+      position: absolute;
+      top: 50px;
+      left: 25px;
+      border-radius: 50%;
+      z-index: 3;
+    }
+
+    .eyes.left {
+      left: 10px;
+    }
+
+    .nose {
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 10px solid orange;
+      position: absolute;
+      top: 60px;
+      left: 20px;
+      z-index: 3;
+    }
+
+    .arms {
+      width: 40px;
+      height: 4px;
+      background-color: #8B4513;
+      position: absolute;
+      top: 100px;
+      left: 75px;
+      transform-origin: bottom;
+      transform: rotate(30deg);
+      z-index: 2;
+    }
+
+    .arms.right {
+      transform: rotate(-20deg);
+      left: -40px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Copos de nieve -->
+  <script>
+    // Función para generar copos de nieve de manera aleatoria
+    function generateSnowflake() {
+      const snowflake = document.createElement('div');
+      snowflake.classList.add('snowflake');
+      snowflake.style.left = `${Math.random() * 100}vw`; // Posición horizontal aleatoria
+      snowflake.style.animationDuration = `${Math.random() * 2 + 1}s`; // Duración de la animación aleatoria
+      document.body.appendChild(snowflake);
+
+      // Eliminar el copo de nieve después de completar la animación
+      snowflake.addEventListener('animationiteration', () => {
+        snowflake.remove();
+      });
+    }
+
+    // Generar copos de nieve más frecuentemente
+    setInterval(generateSnowflake, 10); // Intervalo más corto para más copos
+  </script>
+
+  <!-- Muñeco de nieve -->
+  <div class="snowman">
+    <div class="snowball bottom"></div>
+    <div class="snowball middle"></div>
+    <div class="snowball top"></div>
+    <div class="scarf"></div>
+    <div class="hat"></div>
+    <div class="eyes left"></div>
+    <div class="eyes"></div>
+    <div class="nose"></div>
+    <div class="arms"></div>
+    <div class="arms right"></div>
+  </div>
+
+  <script>
+    
+    // Agrega la lógica de cambio de color del muñeco de nieve aquí
+    const snowballs = document.querySelectorAll('.snowball');
+
+    snowballs.forEach((ball, index) => {
+      ball.addEventListener('click', () => {
+        // Cambiar color al hacer clic
+        const colors = ['#FF0000', '#00FF00', '#0000FF'];
+        ball.style.backgroundColor = colors[index % colors.length];
+      });
+    });
+  </script>
+</body>
+</html>

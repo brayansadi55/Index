@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario Profesor</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background-image: url('2.jpg');
+                background-size: cover;
+                background-position: center;
+            }
+    
+            #container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 80%;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+    
+            #form-container {
+                background-color: rgba(226, 238, 237, 0.1);
+                width: 90%;
+                max-width: 400px;
+                padding: 20px;
+                border-radius: 15px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            }
+    
+            #form-container:hover {
+                background-color: rgba(226, 238, 237, 0.9);
+            }
+    
+            h2 {
+                font-size: 20px;
+            }
+    
+            label {
+                display: block;
+                margin-top: 5px;
+                font-weight: bold;
+                color: #333;
+            }
+    
+            input[type="text"],
+            input[type="date"],
+            input[type="password"],
+            select {
+                width: 95%;
+                padding: 5px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+            }
+    
+            input[type="radio"] {
+                display: inline-block;
+                margin-right: 5px;
+            }
+    
+            input[type="submit"] {
+                background-color: #B545D2;
+                color: #fff;
+                border: none;
+                padding: 8px 15px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-weight: bold;
+                margin-top: 10px;
+            }
+    
+            input[type="submit"]:hover {
+                background-color: #943BA8;
+            }
+        </style>
+    </head>
+</head>
+
+<body>
+    <div id="container">
+        <div id="form-container">
+            <form>
+                <label for="nombre">Nombre(s):</label>
+                <input type="text" name="nombre" maxlength="20">
+                <label for="paterno">Apellido Paterno:</label>
+                <input type="text" name="paterno" maxlength="20">
+                <label for="materno">Apellido Materno:</label>
+                <input type="text" name="materno" maxlength="20">
+                <label for="fechanac">Fecha de Nacimiento:</label>
+                <input type="date" name="fechanac">
+                Sexo:<br>
+                <input type="radio" name="sexo" value="M" id="sexo-m">
+                <label for="sexo-m">M</label>
+                <input type="radio" name="sexo" value="F" id="sexo-f">
+                <label for="sexo-f">F</label>
+                <label for="semestre">Semestre:</label>
+                <input type="text" name="semestre" maxlength="5">
+                <label for="carrera">Elige tu carrera:</label>
+                <select name="carrera">
+                    <option value="">------------</option>
+                    <option value="Ingenieria Sistemas Computacionales">Ingenieria Sistemas Computacionales</option>
+                    <option value="Ingeniería Industrial">Ingeniería Industrial</option>
+                    <option value="Ingeniería Electromecánica">Ingeniería Electromecánica</option>
+                    <option value="Ingeniería Mecatrónica">Ingeniería Mecatrónica</option>
+                    <option value="Ingeniería Ambiental">Ingeniería Ambiental</option>
+                    <option value="Ingeniería Materiales">Ingeniería Materiales</option>
+                    <option value="Ingeniería Gestión Empresarial">Ingeniería Gestión Empresarial</option>
+                    <option value="Ingeniería Tecnologías de Información y Comunicación">Ingeniería Tecnologías de
+                        Información y Comunicación</option>
+                    <option value="Ingeniería Química">Ingeniería Química</option>
+                    <option value="Ingeniería Civil">Ingeniería Civil</option>
+                    <option value="Licenciatura en Administración">Licenciatura en Administración</option>
+                </select>
+                <label for="usuario">Usuario:</label>
+                <input type="text" name="usuario" maxlength="35">
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" name="contrasena" maxlength="10">
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+

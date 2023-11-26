@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Login</title>
+ <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      background-color: #1e1e1e;
+      position: relative;
+    }
+
+    .background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.7;
+    }
+
+    .background:nth-child(1) {
+      animation: animate 10s linear infinite alternate;
+      background-image: linear-gradient(to bottom, #f44336, #3F51B5);
+    }
+
+    .background:nth-child(2) {
+      animation: animate2 8s linear infinite alternate;
+      background-image: linear-gradient(to top, #00bcd4, #4caf50);
+    }
+
+    .background:nth-child(3) {
+      animation: animate3 12s linear infinite alternate;
+      background-image: linear-gradient(to right, #ff9800, #9c27b0);
+    }
+
+    @keyframes animate {
+      0% {
+        transform: translateY(-100%);
+      }
+      100% {
+        transform: translateY(100%);
+      }
+    }
+
+    @keyframes animate2 {
+      0% {
+        transform: translateY(100%);
+      }
+      100% {
+        transform: translateY(-100%);
+      }
+    }
+
+    @keyframes animate3 {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    .background:hover {
+      animation-play-state: paused;
+    }
+
+    .container {
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        width: 400px;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .container h1 {
+        font-size: 32px;
+        color: #fff;
+        margin-bottom: 20px;
+    }
+
+    .controls {
+        width: 92%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #67f5f5;
+        border-radius: 20px;
+        font-size: 16px;
+        background-color: transparent;
+        color: #fff;
+    }
+
+    .container input[type="submit"],
+    .container input[type="button"] {
+        background-color: #45D258;
+        color: #fff;
+        border-radius: 20px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    .container input[type="submit"]:hover,
+    .container input[type="button"]:hover {
+        background-color: #3CA84A;
+    }
+
+    .texto {
+        margin-top: 15px;
+        color: #fff;
+        font-size: 16px;
+    }
+
+    .texto a {
+        text-decoration: none;
+        color: #45D258;
+    }
+ </style>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="background"></div>
+  <div class="background"></div>
+  <div class="container">
+      <h1>Login</h1>
+      <form method="post" action ="Autentifcasion_Usuario.php">
+          <input class="controls" type="text" name="Correo" placeholder="Correo electrónico">
+          <p><input class="controls" type="password" name="contrasena" placeholder="contraseña"></p>
+          <input type="submit" value="Ingresar">
+          <input type="button" value="Nuevo" onclick="window.location.href='FormularioAlumno.html'"><br/>
+          <a href="file:///C:/xampp/htdocs/Index/Citas_Escolares.html"></a>
+      </form>
+  </div>
+</body>
+</html>

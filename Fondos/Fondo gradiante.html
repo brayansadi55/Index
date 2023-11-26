@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Background Animation</title>
+ <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      background-color: #1e1e1e;
+      position: relative;
+    }
+
+    .background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.7;
+    }
+
+    .background:nth-child(1) {
+      animation: animate 10s linear infinite alternate;
+      background-image: linear-gradient(to bottom, #f44336, #3F51B5);
+    }
+
+    .background:nth-child(2) {
+      animation: animate2 8s linear infinite alternate;
+      background-image: linear-gradient(to top, #00bcd4, #4caf50);
+    }
+
+    .background:nth-child(3) {
+      animation: animate3 12s linear infinite alternate;
+      background-image: linear-gradient(to right, #ff9800, #9c27b0);
+    }
+
+    @keyframes animate {
+      0% {
+        transform: translateY(-100%);
+      }
+      100% {
+        transform: translateY(100%);
+      }
+    }
+
+    @keyframes animate2 {
+      0% {
+        transform: translateY(100%);
+      }
+      100% {
+        transform: translateY(-100%);
+      }
+    }
+
+    @keyframes animate3 {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    .background:hover {
+      animation-play-state: paused;
+    }
+ </style>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="background"></div>
+  <div class="background"></div>
+</body>
+</html>

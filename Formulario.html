@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FORMULARIO ALUMNO</title>
+    <style>
+        body {
+            background-color: #cf29c1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #container {
+            background-color: #ffffff;
+            border: 5px solid #10e2e9;
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            width: 800px; /* Establece el ancho al 100% para que se ajuste al ancho de la ventana */
+            max-width: 400px; /* Establece el ancho máximo para el contenedor */
+            text-align: center;
+            margin: 0 auto; /* Centra el contenedor horizontalmente */
+        }
+
+        #title {
+            font-size: 24px;
+            margin: 0 0 20px 0;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 20px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="file"],
+        input[type="time"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        /* Establece un ancho específico para los campos de entrada de texto */
+        input[type="text"] {
+            width: 100%;
+        }
+
+        input[type="submit"] {
+            background-color: #DC53B0;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #BF3989;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <br>
+        <div id="title">Registro de Alumnos</div>
+        <form>
+            <h2>Formulario de Alumno</h2>
+            <label for="nombre">Nombre(s):</label>
+            <input type="text" name="nombre" id="nombre" maxlength="20"><br>
+
+            <label for="paterno">Apellido Paterno:</label>
+            <input type="text" name="paterno" id="paterno" maxlength="20"><br>
+
+            <label for "materno">Apellido Materno:</label>
+            <input type="text" name="materno" id="materno" maxlength="20"><br>
+
+            <label for="fechanac">Fecha de Nacimiento:</label>
+            <input type="date" name="fechanac" id="fechanac"><br>
+
+            Sexo:<br>
+            <input type="radio" name="sexo" value="M" id="sexo-m">
+            <label for="sexo-m">M</label>
+
+            <input type="radio" name="sexo" value="F" id="sexo-f">
+            <label for="sexo-f">F</label><br>
+
+            <label for="email">E-mail:</label>
+            <input type="email" name="email" id="email"><br>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" name="telefono" id="telefono"><br>
+
+            <label for="archivo">Subir Archivo:</label>
+            <input type="file" name="Archivo" id="archivo"><br>
+
+            <label for="hora">Hora:</label>
+            <input type="time" name="hora" id="hora"><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+</body>
+</html>

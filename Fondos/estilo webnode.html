@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Scroll Down Menu</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            overflow: hidden; /* Para evitar que los fondos animados se desborden */
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            z-index: 2; /* Asegura que el encabezado esté sobre el fondo animado */
+        }
+
+        .menu {
+            display: flex;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu a:hover {
+            background-color: #555;
+        }
+
+        .scroll-down {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            position: relative; /* Asegura que el fondo animado esté detrás del contenido */
+            z-index: 1; /* Asegura que el contenido esté sobre el fondo animado */
+        }
+
+        .scroll-down h1 {
+            margin-bottom: 20px;
+            font-size: 36px;
+            color: #333;
+        }
+
+        .scroll-down .mouse {
+            width: 20px;
+            height: 40px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            animation: scrollAnimation 2s infinite;
+        }
+
+        .scroll-down .mouse .arrow {
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 6px solid #333;
+            margin-top: 5px;
+        }
+
+        /* Estilos para los fondos animados */
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        .background:nth-child(1) {
+            animation: animate 10s linear infinite alternate;
+            background-image: linear-gradient(to bottom, #f44336, #3F51B5);
+        }
+
+        .background:nth-child(2) {
+            animation: animate2 8s linear infinite alternate;
+            background-image: linear-gradient(to top, #00bcd4, #4caf50);
+        }
+
+        .background:nth-child(3) {
+            animation: animate3 12s linear infinite alternate;
+            background-image: linear-gradient(to right, #ff9800, #9c27b0);
+        }
+
+        @keyframes animate {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(100%);
+            }
+        }
+
+        @keyframes animate2 {
+            0% {
+                transform: translateY(100%);
+            }
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+
+        @keyframes animate3 {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .background:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background"></div>
+    <div class="background"></div>
+    <div class="background"></div>
+
+    <div class="header">
+        <div class="logo">Logo</div>
+        <div class="menu">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <div class="scroll-down">
+        <h1>Welcome to My Website</h1>
+        <div class="mouse">
+            <div class="arrow"></div>
+        </div>
+    </div>
+</body>
+
+</html>
